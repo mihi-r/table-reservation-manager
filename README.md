@@ -1,5 +1,7 @@
-# CEAS Tribunal Baldwin Tables Reservation
-This web application will allow organizations to reserve tables located in the lobby at Baldwin Hall, University of Cincinnati. 
+# Table Reservation Manager
+This web application allows students to reserve tables and admins to manage reservations. This was created to be used by CEAS Tribunal at the University of Cincinnati.
+
+![](https://github.com/mihi-r/table-reservation-manager/workflows/Project%20CI/badge.svg)
 
 ## Use Case
 ### General Flow
