@@ -1,0 +1,70 @@
+@import '../../styles/fonts.css';
+@import '../../styles/colors.css';
+
+.nav {
+    background: hsl(0, 0%, 100%);
+    box-shadow: 0 4px 6px -1px hsla(0, 0%, 0%, 0.1), 0 2px 4px -1px hsla(0, 0%, 0%, 0.06);
+    height: 6em;
+    width: 100%;
+}
+
+.navContents {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: 0 24px;
+}
+
+.logo {
+    width: 11em;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    width: 15em;
+}
+
+.links a {
+    color: var(--extra-dark-cool-grey);
+    font-family: var(--primary-font-med);
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding-bottom: 0.3em;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    color: var(--med-cool-grey);
+}
+
+.links .selected {
+    border-bottom: 3px solid var(--primary-red);
+}
+
+@media screen and (max-width: 600px) {
+    .nav {
+        height: 8em;
+    }
+
+    .navContents {
+        flex-direction: column;
+    }
+
+    .logo {
+        padding-top: 20px;
+    }
+
+    .links {
+        justify-content: space-around;
+        width: 100%;
+    }
+}
