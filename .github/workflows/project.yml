@@ -35,6 +35,11 @@ jobs:
       run: npm build
 
     - name: Test
-      run: npm test
+      run: npm test -- --coverage
       env:
         CI: true
+
+    - name: Generate coverage
+      uses: coverallsapp/github-action@v1.0.1
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
