@@ -20,7 +20,7 @@ jobs:
       with:
         node-version: 12.x
         
-    - name: Cache node modules
+    - name: Cache Node Modules
       uses: actions/cache@v1
       with:
         path: ~/.npm
@@ -28,18 +28,56 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
 
-    - name: Install Dependencies
+    - name: Install Node Dependencies
       run: npm ci
 
-    - name: Build
+    - name: Build Node
       run: npm build
 
-    - name: Test
-      run: npm test -- --coverage
+    - name: Test UI
+      run: npm coverage
       env:
         CI: true
 
-    - name: Generate coverage
-      uses: coverallsapp/github-action@v1.0.1
+    - name: Upload UI Tests Coverage
+      uses: codecov/codecov-action@v1
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        file: ./coverage/clover.xml
+        flags: uitests
+        name: table-reservation-manager
+        fail_ci_if_error: true
+        
+    - name: Use PHP 7.4
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4'
+        coverage: xdebug
+        tools: composer
+
+    - name: Get Composer Cache Directory
+      id: composer-cache
+      run: |
+        echo "::set-output name=dir::$(composer config cache-files-dir)"
+    
+    - name: Cache PHP Packages
+      uses: actions/cache@v1
+      with:
+        path: ${{ steps.composer-cache.outputs.dir }}
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-composer-
+          
+    - name: Install PHP Dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest
+    
+    - name: Test API
+      run: npm api-coverage
+    
+    - name: Upload API Tests Coverage
+      uses: codecov/codecov-action@v1
+      with:
+        file: ./api-coverage/clover.xml
+        flags: apitests
+        name: table-reservation-manager
+        fail_ci_if_error: true
+    
