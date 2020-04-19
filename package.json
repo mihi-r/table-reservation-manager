@@ -1,6 +1,7 @@
 {
   "name": "table-reservation",
   "version": "0.1.0",
+  "description": "Allow students to reserve tables and admins to manage reservations",
   "repository": "https://github.com/mihi-r/table-reservation-manager.git",
   "author": {
     "name": "Mihir Patel",
@@ -16,6 +17,7 @@
     "@types/react-dom": "^16.9.6",
     "@types/react-router-dom": "^5.1.3",
     "react": "^16.13.1",
+    "react-async": "^10.0.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
@@ -25,7 +27,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "coverage": "react-scripts test --coverage",
+    "api-test": "./vendor/bin/phpunit",
+    "api-coverage": "./vendor/bin/phpunit --coverage-html=./api-coverage --coverage-clover=./api-coverage/clover.xml"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "@sheerun/mutationobserver-shim": "^0.3.3",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "eslint-config-airbnb-typescript": "^7.2.0",
     "eslint-plugin-import": "^2.20.2",

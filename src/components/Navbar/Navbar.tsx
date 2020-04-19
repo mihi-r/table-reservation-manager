@@ -5,6 +5,7 @@ import tribunalLogo from '../../images/tribunal-logo.png';
 
 /**
  * The navigation bar displayed on all pages.
+ * @returns A React element.
  */
 function Navbar(): React.ReactElement {
     return (

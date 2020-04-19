@@ -1,5 +1,9 @@
 import React from 'react';
 
+/**
+ * The page to allow users to view their reservation status.
+ * @returns A React element.
+ */
 function Status(): React.ReactElement {
     return (
         <main>
