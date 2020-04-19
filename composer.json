@@ -1,0 +1,22 @@
+{
+    "name": "mihi-r/table-reservation-manager",
+    "description": "Allow students to reserve tables and admins to manage reservations",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mihir Patel",
+            "email": "patel3mh@mail.uc.edu"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Api\\": "api/"
+        }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.5",
+        "phpunit/phpunit": "^9"
+    }
+}

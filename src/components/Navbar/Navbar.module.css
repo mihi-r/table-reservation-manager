@@ -34,9 +34,9 @@
 
 .links a {
     color: var(--extra-dark-cool-grey);
-    font-family: var(--primary-font-med);
+    font-family: var(--primary-font);
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: var(--primary-font-med-weight);
     padding-bottom: 0.3em;
     text-decoration: none;
     transition: color 0.3s;

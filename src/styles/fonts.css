@@ -1,5 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;500&family=Roboto&display=swap');
 
 :root {
-    --primary-font-med: 'Inter', sans-serif;
+    --primary-font: 'Inter', sans-serif;
+    --secondary-font: 'Roboto', sans-serif;
+
+    --primary-font-extra-light-weight: 200;
+    --primary-font-med-weight: 500
 }

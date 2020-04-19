@@ -1,0 +1,22 @@
+.skeleton {
+    margin-top: 16px;
+}
+
+.skeleton .line {
+    height: 1em;
+    animation: pulse 1s infinite ease-in-out;
+    margin-bottom: 0.5em;
+    border-radius: 2em;
+}
+
+@keyframes pulse {
+    0% {
+      background-color: hsla(0, 0%, 65%, 0.1);
+    }
+    50% {
+      background-color: hsla(0, 0%, 65%, 0.3);
+    }
+    100% {
+      background-color: hsla(0, 0%, 65%, 0.1);
+    }
+}

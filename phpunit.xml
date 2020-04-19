@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors = "true">
+    <testsuites>
+        <testsuite name="API Test Suite">
+            <directory>api/Tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">api/</directory>
+            <exclude>
+                <directory>api/Tests</directory>
+                <directory>api/Config</directory>
+                <file>api/api.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>
