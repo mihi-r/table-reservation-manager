@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The controller to handle admin API logic.
+ * The controller to handle table API logic.
  */
 
 declare(strict_types=1);
@@ -11,19 +11,19 @@ namespace Api\Controllers;
 use Api\Constants\ApiConstants;
 use Api\Controllers\BaseController;
 use Api\Models\Response;
-use Api\Repositories\AdminRepository;
+use Api\Repositories\TableRepository;
 
-class AdminController extends BaseController
+class TableController extends BaseController
 {
     private $repository;
 
     /**
      * The constructor.
-     * @param AdminRepository $adminRepository The admin repository.
+     * @param TableRepository $tableRepository The table repository.
      */
-    public function __construct(AdminRepository $adminRepository)
+    public function __construct(TableRepository $tableRepository)
     {
-        $this->repository = $adminRepository;
+        $this->repository = $tableRepository;
     }
 
     /**
@@ -35,7 +35,7 @@ class AdminController extends BaseController
         $response = null;
         switch ($requestMethod) {
             case ApiConstants::GET_REQUEST_METHOD:
-                $response = $this->getAllAdmins();
+                $response = $this->getAllTables();
                 break;
             default:
                 $response = $this->defineUnsupportedMethod();
@@ -54,21 +54,21 @@ class AdminController extends BaseController
     }
 
     /**
-     * Get all admins.
+     * Get all tables.
      * @return Response The response.
      */
-    private function getAllAdmins(): Response
+    private function getAllTables(): Response
     {
         $response = new Response();
         $response->body = new \stdClass();
 
         try {
-            $admins = $this->repository->findAll();
-            $response->body->data = $admins;
+            $tables = $this->repository->findAll();
+            $response->body->data = $tables;
             $response->statusCode = 200;
         } catch (\Exception $e) {
             error_log($e->getMessage());
-            $response->body->message = 'Failed to retrieve admin information.';
+            $response->body->message = 'Failed to retrieve table information.';
             $response->statusCode = 500;
         }
 

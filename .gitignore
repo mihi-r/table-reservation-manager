@@ -19,3 +19,6 @@
 .env.test.local
 .env.production.local
 npm-debug.log*
+
+# db constants
+/api/Constants/DbConstants.php

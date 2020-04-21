@@ -1,30 +1,33 @@
 <?php
 
 /**
- * The model of an admin.
+ * The model of a table.
  */
 
 declare(strict_types=1);
 
 namespace Api\Models;
 
-class Admin implements \JsonSerializable
+class Table implements \JsonSerializable
 {
     private $id;
     private $name;
-    private $email;
+    private $description;
+    private $warning;
 
     /**
      * The constructor.
      * @param int $id The unqiue identifier.
      * @param string $name The name.
-     * @param string $email The email.
+     * @param string $description The description.
+     * @param string $warning The warning.
      */
-    public function __construct(int $id, string $name, string $email)
+    public function __construct(int $id, string $name, string $description, string $warning)
     {
         $this->id = $id;
         $this->name = $name;
-        $this->email = $email;
+        $this->description = $description;
+        $this->warning = $warning;
     }
 
     /**
@@ -46,12 +49,21 @@ class Admin implements \JsonSerializable
     }
 
     /**
-     * Get the email.
-     * @return string The email.
+     * Get the description.
+     * @return string The description.
      */
-    public function getEmail(): string
+    public function getDescription(): string
     {
-        return $this->email;
+        return $this->description;
+    }
+
+    /**
+     * Get the warning.
+     * @return string The warning.
+     */
+    public function getWarning(): string
+    {
+        return $this->warning;
     }
 
     /**
