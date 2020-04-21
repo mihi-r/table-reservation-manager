@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Api\Tests\Controllers;
 
-use Api\Constants\Constants;
+use Api\Constants\ApiConstants;
 use Api\Controllers\AdminController;
 use Api\Models\Admin;
 use Api\Repositories\AdminRepository;
@@ -28,7 +28,7 @@ class AdminControllerTest extends TestCase
         $this->supressEcho();
 
         $adminController = new AdminController($adminRepositoryStub);
-        $adminController->processRequest(Constants::GET_REQUEST_METHOD);
+        $adminController->processRequest(ApiConstants::GET_REQUEST_METHOD);
         
         $this->assertGreaterThan(299, http_response_code());
     }
@@ -42,7 +42,7 @@ class AdminControllerTest extends TestCase
         $this->supressEcho();
 
         $adminController = new AdminController($adminRepositoryStub);
-        $adminController->processRequest(Constants::GET_REQUEST_METHOD);
+        $adminController->processRequest(ApiConstants::GET_REQUEST_METHOD);
         
         $this->assertThat(
             http_response_code(),
@@ -62,7 +62,7 @@ class AdminControllerTest extends TestCase
         $this->expectOutputRegex("/\[]/");
 
         $adminController = new AdminController($adminRepositoryStub);
-        $adminController->processRequest(Constants::GET_REQUEST_METHOD);
+        $adminController->processRequest(ApiConstants::GET_REQUEST_METHOD);
     }
 
     public function testPresentDataForGetAllAdmins(): void
@@ -77,10 +77,10 @@ class AdminControllerTest extends TestCase
 
         $this->expectOutputRegex("/1/");
         $this->expectOutputRegex("/Bob Ross/");
-        $this->expectOutputRegex("/bob.ross@gmail.com/");
+        $this->expectOutputRegex("/bob\.ross@gmail\.com/");
 
         $adminController = new AdminController($adminRepositoryStub);
-        $adminController->processRequest(Constants::GET_REQUEST_METHOD);
+        $adminController->processRequest(ApiConstants::GET_REQUEST_METHOD);
     }
 
     public function testUnsupportedMethod(): void
@@ -99,7 +99,7 @@ class AdminControllerTest extends TestCase
                             ->willReturn([NAN]);
 
         $adminController = new AdminController($adminRepositoryStub);
-        $adminController->processRequest(Constants::GET_REQUEST_METHOD);
+        $adminController->processRequest(ApiConstants::GET_REQUEST_METHOD);
         
         $this->assertGreaterThan(299, http_response_code());
     }
