@@ -2,7 +2,7 @@
 This web application allows students to reserve tables and admins to manage reservations. This was created to be used by CEAS Tribunal at the University of Cincinnati.
 
 ![](https://github.com/mihi-r/table-reservation-manager/workflows/Project%20CI/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/mihi-r/table-reservation-manager/badge.svg?branch=master)](https://coveralls.io/github/mihi-r/table-reservation-manager?branch=master)
+[![codecov](https://codecov.io/gh/mihi-r/table-reservation-manager/branch/master/graph/badge.svg)](https://codecov.io/gh/mihi-r/table-reservation-manager)
 
 ## Use Case
 ### General Flow

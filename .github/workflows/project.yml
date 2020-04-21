@@ -35,14 +35,14 @@ jobs:
       run: npm build
 
     - name: Test UI
-      run: npm coverage
+      run: npm run coverage
       env:
         CI: true
 
     - name: Upload UI Tests Coverage
       uses: codecov/codecov-action@v1
       with:
-        file: ./coverage/clover.xml
+        file: ./coverage/lcov.info
         flags: uitests
         name: table-reservation-manager
         fail_ci_if_error: true
@@ -71,7 +71,7 @@ jobs:
       run: composer install --prefer-dist --no-progress --no-suggest
     
     - name: Test API
-      run: npm api-coverage
+      run: npm run api-coverage
     
     - name: Upload API Tests Coverage
       uses: codecov/codecov-action@v1
