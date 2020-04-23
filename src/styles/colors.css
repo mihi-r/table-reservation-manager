@@ -1,7 +1,12 @@
 :root {
-    --red-gradiant: linear-gradient(150deg, hsl(354, 64%, 49%) 15%, hsl(4, 85%, 58%) 70%, hsl(346, 100%, 63%) 94%);
     --extra-dark-cool-grey: hsl(209, 15%, 14%);
     --dark-cool-grey: hsl(209, 15%, 30%);
     --med-cool-grey: hsl(209, 15%, 50%);
+
     --primary-red: hsl(358, 85%, 53%);
+    --very-light-red: hsla(0, 100%, 50%, 0.271);
+    --red-gradiant: linear-gradient(150deg, hsl(354, 64%, 49%) 15%, hsl(4, 85%, 58%) 70%, hsl(346, 100%, 63%) 94%);
+
+    --accent-yellow: hsl(46, 100%, 50%);
+    --very-light-yellow: hsl(46, 100%, 90%);
 }

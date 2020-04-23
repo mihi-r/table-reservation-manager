@@ -1,13 +1,10 @@
-@import '../../styles/fonts.css';
-@import '../../styles/colors.css';
-
 .background {
-    min-height: 90vh;
     background: var(--red-gradiant), url(../../images/baldwin.jpg);
-    color: white;
     background-blend-mode: darken;
-    background-size: cover;
     background-position: center;
+    background-size: cover;
+    color: white;
+    min-height: 90vh;
 }
 
 .contents {

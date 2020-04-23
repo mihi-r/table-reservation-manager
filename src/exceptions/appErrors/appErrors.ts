@@ -19,7 +19,7 @@ class AppErrors {
     }
 
     /**
-     * The error for when the cause of the error is unknown.
+     * The error for when the cause of the request error is unknown.
      * @returns The error.
      */
     public static unknownRequestError(): AppErrorInfo {
@@ -51,6 +51,19 @@ class AppErrors {
         return {
             code: AppErrors.codePrefix + 4,
             message: 'Requested resource not found. Please report this error to the admins.',
+            type: ErrorType.Error,
+        };
+    }
+
+    /**
+     * The error for when the cause of the error is unknown.
+     * @returns The error.
+     */
+    public static unknownError(): AppErrorInfo {
+        return {
+            code: AppErrors.codePrefix + 5,
+            message: 'An unknown error occured. If this error is preventing you from performing '
+                + 'your desired action, please try again and report the error to the admins if the error persists.',
             type: ErrorType.Error,
         };
     }
