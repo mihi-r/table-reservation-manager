@@ -5,6 +5,9 @@ import { Admins } from '../../types/apiResponseData';
 import APIResources from '../../constants/apiResourses';
 import { RequestMethod } from '../../types/general';
 import styles from './ReservationOpener.module.css';
+import AlertMessage from '../AlertMessage/AlertMessage';
+// import AppError from '../../exceptions/appError';
+// import AppWarnings from '../../exceptions/appWarnings/appWarnings';
 
 /**
  * Gets all of the admins.
@@ -44,7 +47,7 @@ export function formatAdminsText(admins: Admins) {
  * @returns A React element or null.
  */
 function ReservationOpener(): React.ReactElement {
-    const { data, isPending } = useAsync({ promiseFn: getAdmins });
+    const { data, isPending, error } = useAsync({ promiseFn: getAdmins });
 
     if (isPending) {
         if (window.innerWidth > 600) {
@@ -83,7 +86,7 @@ function ReservationOpener(): React.ReactElement {
         );
     }
 
-    return <p>Error</p>;
+    return <AlertMessage error={error} />;
 }
 
 export default ReservationOpener;
